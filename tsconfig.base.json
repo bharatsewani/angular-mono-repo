@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@angular-monorepo/my-plugin": ["tools/my-plugin/src/index.ts"],
       "@angular-monorepo/orders": ["libs/orders/src/index.ts"],
       "@angular-monorepo/products": ["libs/products/src/index.ts"],
       "@angular-monorepo/recommended": ["tools/recommended/src/index.ts"],
