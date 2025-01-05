@@ -1,6 +1,6 @@
 // 3 simple steps to add a generator 
 // 1.) nx add @nx/plugin
-// 2.) nx g @nx/plugin tools/myplugin
+// 2.) nx g @nx/plugin:plugin tools/myplugin
 // 3.) nx generate @nx/plugin:generator tools/my-plugin/src/generators/my-generator
 
 import {

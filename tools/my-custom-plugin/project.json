@@ -1,0 +1,48 @@
+{
+  "name": "my-custom-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/my-custom-plugin/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/my-custom-plugin",
+        "main": "tools/my-custom-plugin/src/index.ts",
+        "tsConfig": "tools/my-custom-plugin/tsconfig.lib.json",
+        "assets": [
+          "tools/my-custom-plugin/*.md",
+          {
+            "input": "./tools/my-custom-plugin/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/my-custom-plugin/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/my-custom-plugin",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./tools/my-custom-plugin",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "tools/my-custom-plugin/jest.config.ts"
+      }
+    }
+  }
+}
